@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Biblioteca - Buscar libros</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+  <nav>
+    <div class="logo"><i class="fas fa-book-open"></i> Biblioteca</div>
+    <ul>
+      <li><a href="page.html" class="inicio-link">Inicio</a></li>
+      <li><a href="catalogo.html" class="catalogo-link">Catálogo</a></li>
+      <li><a href="contacto.html" class="contacto-link">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <div class="search-box">
+      <input type="text" id="searchInput" placeholder="Buscar libros por título, autor o tema..." />
+      <button id="searchBtn"><i class="fas fa-search"></i> Buscar</button>
+      <button id="clearBtn" title="Limpiar filtros y búsqueda">
+        <i class="fas fa-eraser"></i> Limpiar
+      </button>
+    </div>
+
+    <div class="filters">
+      <label>
+        Año desde:
+        <input type="number" id="yearMin" placeholder="Min" min="0" max="2100" />
+      </label>
+      <label>
+        Año hasta:
+        <input type="number" id="yearMax" placeholder="Max" min="0" max="2100" />
+      </label>
+    </div>
+
+    <div id="results"></div>
+
+    <section class="ejemplo-portadas">
+      <h2>Libros destacados</h2>
+      <div class="portadas-grid">
+        <div class="portada">
+          <a href="https://openlibrary.org/works/OL45804W" target="_blank" rel="noopener">
+            <img src="https://covers.openlibrary.org/b/id/8231856-L.jpg" alt="Cien años de soledad" />
+            <p>Cien años de soledad</p>
+          </a>
+        </div>
+        <div class="portada">
+          <a href="https://openlibrary.org/works/OL15367018W" target="_blank" rel="noopener">
+            <img src="https://covers.openlibrary.org/b/id/10523361-L.jpg" alt="Don Quijote de la Mancha" />
+            <p>Don Quijote de la Mancha</p>
+          </a>
+        </div>
+        <div class="portada">
+          <a href="https://openlibrary.org/works/OL14908393W" target="_blank" rel="noopener">
+            <img src="https://covers.openlibrary.org/b/id/8228691-L.jpg" alt="El Principito" />
+            <p>El Principito</p>
+          </a>
+        </div>
+        <div class="portada">
+          <a href="https://openlibrary.org/works/OL15262018W" target="_blank" rel="noopener">
+            <img src="https://covers.openlibrary.org/b/id/10958339-L.jpg" alt="Orgullo y prejuicio" />
+            <p>Orgullo y prejuicio</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

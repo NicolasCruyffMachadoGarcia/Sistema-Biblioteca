@@ -1,0 +1,481 @@
+/* ===========================
+   RESET
+   =========================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===========================
+   BASE BODY
+   =========================== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ===========================
+   NAVBAR
+   =========================== */
+nav {
+  background-color: #1f1f1f;
+  color: #e0e0e0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #333;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+}
+
+nav .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #9f88ff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: #f1f1f1;
+  font-weight: 500;
+  transition: color 0.3s, transform 0.2s;
+}
+
+nav a:hover {
+  color: #00c2ff;
+  transform: translateY(-2px);
+}
+
+nav a.active {
+  color: #00c2ff;
+  font-weight: bold;
+  border-bottom: 2px solid #00c2ff;
+}
+
+/* ===========================
+   MAIN CONTAINER
+   =========================== */
+main {
+  flex: 1;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* ===========================
+   TITULOS
+   =========================== */
+h2 {
+  color: #00c2ff;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+/* ===========================
+   SEARCH BOX & FILTERS
+   =========================== */
+.search-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 20px;
+}
+
+.search-box input {
+  width: 320px;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #232323;
+  color: #e0e0e0;
+  font-size: 1.1em;
+  transition: background 0.2s, border 0.2s;
+}
+
+.search-box input:focus {
+  background: #181818;
+  border: 1px solid #00c2ff;
+  outline: none;
+}
+
+.search-box button {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #00c2ff, #0077ff);
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.search-box button:hover {
+  background: linear-gradient(135deg, #0077ff, #00c2ff);
+  transform: translateY(-2px);
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.filters label {
+  color: #e0e0e0;
+  font-size: 1em;
+}
+
+.filters input {
+  width: 80px;
+  padding: 7px;
+  border-radius: 6px;
+  border: none;
+  background: #232323;
+  color: #e0e0e0;
+  font-size: 1em;
+  margin-left: 6px;
+  transition: background 0.2s, border 0.2s;
+}
+
+.filters input:focus {
+  background: #181818;
+  border: 1px solid #00c2ff;
+  outline: none;
+}
+
+/* ===========================
+   RESULTADOS DE LIBROS
+   =========================== */
+#results {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.book-card {
+  background: #232323;
+  border-radius: 14px;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.18);
+  width: 260px;
+  padding: 22px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.book-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 28px rgba(0,194,255,0.13);
+}
+
+.book-card img {
+  width: 120px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.book-card .book-title {
+  font-size: 1.15em;
+  font-weight: bold;
+  color: #00c2ff;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.book-card .book-author {
+  font-size: 1em;
+  color: #e0e0e0;
+  margin-bottom: 6px;
+}
+
+.book-card .book-year {
+  font-size: 0.95em;
+  color: #aaa;
+  margin-bottom: 10px;
+}
+
+.book-card a {
+  color: #9f88ff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.book-card a:hover {
+  color: #00c2ff;
+  text-decoration: underline;
+}
+
+/* ===========================
+   LIBROS DESTACADOS
+   =========================== */
+.ejemplo-portadas {
+  margin: 40px 0 0 0;
+  padding: 20px 0;
+  background: #f8f9fa;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.ejemplo-portadas h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.portadas-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.portada {
+  width: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  padding: 12px 8px;
+  margin-bottom: 12px;
+  transition: transform 0.2s;
+}
+
+.portada:hover {
+  transform: translateY(-4px) scale(1.04);
+}
+
+.portada img {
+  width: 110px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.portada p {
+  margin-top: 8px;
+  font-size: 1em;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+
+.catalogo-section {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #232323;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.13);
+  text-align: center;
+}
+
+.catalogo-section h2 {
+  color: #00c2ff;
+  margin-bottom: 18px;
+}
+
+.catalogo-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contacto-section p {
+  color: #ccc;
+  margin-bottom: 18px;
+}
+
+.contacto-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-top: 20px;
+}
+
+.form-row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.form-group {
+  width: 100%;
+  max-width: 380px;
+  background: #181818;
+  padding: 18px 16px;
+  border-radius: 12px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+.form-group:hover {
+  transform: translateY(-2px);
+}
+
+.contacto-form label {
+  font-size: 0.9em;
+  color: #cfcfcf;
+}
+
+.contacto-form input,
+.contacto-form textarea {
+  width: 100%;
+  font-size: 1em;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #2a2a2a;
+  color: #fff;
+  outline: none;
+  transition: border 0.3s, background 0.3s;
+  resize: none;
+}
+
+.contacto-form input::placeholder,
+.contacto-form textarea::placeholder {
+  color: #999;
+}
+
+.contacto-form input:focus,
+.contacto-form textarea:focus {
+  background: #333;
+  border: 1px solid #00c2ff;
+}
+
+.contacto-form button {
+  width: 100%;
+  max-width: 380px;
+  padding: 12px;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #00c2ff, #0077ff);
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.contacto-form button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0,194,255,0.4);
+}
+
+.form-info {
+  margin-top: 12px;
+  font-size: 0.85em;
+  color: #aaa;
+}
+
+/* ===========================
+   RESPONSIVE
+   =========================== */
+@media (max-width: 1024px) {
+  main {
+    max-width: 98vw;
+    padding: 10px;
+  }
+  #results {
+    gap: 20px;
+  }
+  .book-card {
+    width: 220px;
+    padding: 16px 10px;
+  }
+  .portada {
+    width: 110px;
+    padding: 8px 4px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+  }
+
+  .search-box,
+  .filters {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .search-box input,
+  .search-box button {
+    width: 100%;
+  }
+
+  #results {
+    gap: 16px;
+  }
+  .book-card {
+    width: 98vw;
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 400px) {
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .contacto-form input,
+  .contacto-form textarea,
+  .contacto-form button {
+    font-size: 0.9em;
+  }
+  .book-card {
+    width: 98vw;
+    max-width: 220px;
+    padding: 10px 4px;
+  }
+}
+
+/* ===========================
+   FIN
+   =========================== */

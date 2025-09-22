@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto - Bibliotequix</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body class="pagina-contacto">
+  <!-- NAV -->
+  <nav>
+    <div class="logo"><i class="fas fa-book-open"></i> Bibliotequix</div>
+    <ul>
+      <li><a href="page.html" class="inicio-link">Inicio</a></li>
+      <li><a href="catalogo.html" class="catalogo-link">Catálogo</a></li>
+      <li><a href="contacto.html" class="contacto-link active">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN -->
+  <main>
+    <section class="contacto-section">
+      <h2><i class="fas fa-envelope-open-text"></i> Contáctanos</h2>
+      <p>¿Tienes alguna consulta o sugerencia? ¡Escríbenos y te responderemos lo antes posible!</p>
+      
+      <!-- FORMULARIO -->
+      <form class="contacto-form" action="https://formspree.io/f/{tu_codigo}" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre"><i class="fas fa-user"></i> Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" autocomplete="name" />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email"><i class="fas fa-envelope"></i> Correo electrónico:</label>
+            <input type="email" id="email" name="email" required placeholder="tucorreo@ejemplo.com" autocomplete="email" />
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <div class="form-group">
+            <label for="mensaje"><i class="fas fa-comment-dots"></i> Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="5" required placeholder="Escribe tu mensaje aquí..."></textarea>
+          </div>
+        </div>
+        
+        <div class="form-row">
+          <button type="submit" class="btn-enviar"><i class="fas fa-paper-plane"></i> Enviar</button>
+        </div>
+      </form>
+      
+      <!-- INFO EXTRA -->
+      <div class="form-info">
+        <small><i class="fas fa-info-circle"></i> Recibirás respuesta en tu correo pronto.</small>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
