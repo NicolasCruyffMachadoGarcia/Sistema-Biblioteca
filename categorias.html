@@ -9,10 +9,23 @@
 </head>
 <body>
   <nav>
-    <div class="logo"><i class="fas fa-book-open"></i> Biblioteca</div>
+    <div class="logo"><i class="fas fa-book-open"></i> Biblioteca Virtual</div>
     <ul>
-      <li><a href="page.html" class="inicio-link">Inicio</a></li>
-      <li><a href="catalogo.html" class="catalogo-link">Catálogo</a></li>
+      <li><a href="index.html" class="inicio-link">Inicio</a></li>
+
+
+      <!-- 🔽 Menú desplegable de categorías -->
+      <li class="dropdown">
+        <a href="#" class="categorias-link">Categorías <i class="fas fa-caret-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#" data-category="comedy">Comedia</a></li>
+          <li><a href="#" data-category="action">Acción</a></li>
+          <li><a href="#" data-category="fiction">Ficción</a></li>
+          <li><a href="#" data-category="fantasy">Fantasía</a></li>
+          <li><a href="#" data-category="romance">Romance</a></li>
+        </ul>
+      </li>
+
       <li><a href="contacto.html" class="contacto-link">Contacto</a></li>
     </ul>
   </nav>

@@ -118,3 +118,48 @@ searchInput.addEventListener('keyup', (e) => {
     searchBooks();
   }
 });
+const resultsContainer = document.getElementById("results");
+
+// Mostrar resultados
+function mostrarResultados(libros) {
+  resultsContainer.innerHTML = "";
+
+  if (!libros || libros.length === 0) {
+    resultsContainer.innerHTML = "<p>No se encontraron libros</p>";
+    return;
+  }
+
+  libros.forEach(libro => {
+    const card = document.createElement("div");
+    card.className = "book-card";
+
+    const img = libro.volumeInfo?.imageLinks?.thumbnail || "https://via.placeholder.com/120x180?text=No+Cover";
+    const title = libro.volumeInfo?.title || "Sin título";
+    const author = libro.volumeInfo?.authors ? libro.volumeInfo.authors.join(", ") : "Desconocido";
+    const year = libro.volumeInfo?.publishedDate || "N/A";
+
+    card.innerHTML = `
+      <img src="${img}" alt="${title}">
+      <p class="book-title">${title}</p>
+      <p class="book-author">${author}</p>
+      <p class="book-year">${year}</p>
+    `;
+
+    resultsContainer.appendChild(card);
+  });
+}
+
+// 🔽 Categorías
+const categoryLinks = document.querySelectorAll(".dropdown-menu a");
+
+categoryLinks.forEach(link => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const categoria = link.dataset.category;
+
+    fetch(`https://www.googleapis.com/books/v1/volumes?q=subject:${categoria}`)
+      .then(res => res.json())
+      .then(data => mostrarResultados(data.items))
+      .catch(err => console.error(err));
+  });
+});

@@ -475,7 +475,36 @@ h2 {
     padding: 10px 4px;
   }
 }
+/* Dropdown Categorías */
+nav .dropdown {
+  position: relative;
+}
 
-/* ===========================
-   FIN
-   =========================== */
+nav .dropdown-menu {
+  display: none;
+  position: absolute;
+  background: #1f1f1f;
+  top: 100%;
+  left: 0;
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  border: 1px solid #333;
+  border-radius: 6px;
+  min-width: 160px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 100;
+}
+
+nav .dropdown-menu li {
+  padding: 8px 20px;
+}
+
+nav .dropdown-menu a {
+  color: #e0e0e0;
+  display: block;
+}
+
+nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
